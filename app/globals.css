@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030508;
+  --foreground: #f4f2eb;
+  --atlantis-navy: #0a1628;
+  --atlantis-navy-mid: #0f2137;
+  --atlantis-gold: #c9a227;
+  --atlantis-gold-soft: #dcc060;
+  --atlantis-gold-dim: rgba(201, 162, 39, 0.15);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-atlantis-navy: var(--atlantis-navy);
+  --color-atlantis-navy-mid: var(--atlantis-navy-mid);
+  --color-atlantis-gold: var(--atlantis-gold);
+  --color-atlantis-gold-soft: var(--atlantis-gold-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-cormorant);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes atlantis-shimmer {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+@keyframes atlantis-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2%, 1%, 0) scale(1.03);
+  }
+}
+
+.atlantis-glow-1 {
+  animation: atlantis-float 22s ease-in-out infinite;
+}
+
+.atlantis-glow-2 {
+  animation: atlantis-float 28s ease-in-out infinite reverse;
+}
+
+.atlantis-line-shimmer {
+  animation: atlantis-shimmer 5s ease-in-out infinite;
 }
