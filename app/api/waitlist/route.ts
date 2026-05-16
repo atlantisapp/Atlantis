@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: "Atlantis <onboarding@resend.dev>",
-      to: "jsecordwright@gmail.com",
+      to: "jacksonpaulwright@gmail.com",
       subject: "New Atlantis Waitlist Signup",
       html: `<p>New signup: <strong>${email}</strong></p>`,
     });
